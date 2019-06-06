@@ -20,7 +20,9 @@ body {
    background-color: #E2DCD5;
    opacity: .9;
    padding: 0px;
-  
+   height: 100vh;
+   background: url('../images/twitter_header_photo_2.jpg') center no-repeat;
+   background-size: cover;
 }
 
 .foot {
@@ -54,7 +56,7 @@ background-color: rgb(252, 252, 252);
 
 
 .container-image {
-    background: url(lotus.JPG) no-repeat center fixed; 
+    /* background: url(lotus.JPG) no-repeat center fixed;  */
     background-size: cover;
 
 }
@@ -213,4 +215,10 @@ padding-left: 35px;
 }
 #drive {
   color: #ff0000;
+}
+
+@media screen and (min-width: 1024px) {
+  .jumbotron {
+    height: 60vh;
+  }
 }
