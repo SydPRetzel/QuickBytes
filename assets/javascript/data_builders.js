@@ -42,6 +42,7 @@ function getEstablishments(lat, lon) {
     });
 }
 
+// Get all restaurants given a center point and radius.
 function getRestaurantData(lat, lon, radius_meters) {
 
     // Results are sorted in distance ascending order.
@@ -149,6 +150,7 @@ function getRestaurantData(lat, lon, radius_meters) {
     });
 }
 
+// Get traffic data for restaurant index.
 function getTrafficData(idx) {
 
     var from_lat = restaurantData.getOriginLat();
@@ -230,6 +232,7 @@ function getTrafficData(idx) {
     restaurantData.setPlaceTrafficDataRequest(idx, traffic_data_request);
 }
 
+// Get walking data for restaurant at index.
 function getWalkData(idx) {
 
     var from_lat = restaurantData.getOriginLat();

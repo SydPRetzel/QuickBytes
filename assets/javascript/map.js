@@ -1,5 +1,9 @@
 function mapInit() {
+
+    // Instantiate the map at the <div> with id "map".
     map = L.map('map', { center: latlon, zoom: 17 });
+
+    // Put a green marker at the user specified lat/lon.
     //code from https://github.com/pointhi/leaflet-color-markers
     var greenIcon = new L.Icon({
         iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
@@ -17,7 +21,7 @@ function mapInit() {
 function renderMap() {
 
 
-
+    // Creater marker object for all the restaurants.
     var markers = [];
     console.log(markers);
 
@@ -32,6 +36,7 @@ function renderMap() {
     }
     console.log(markers);
 
+    // Create push pin markers for restaurants.
     var markarr = [];
     //code from https://harrywood.co.uk/maps/examples/leaflet/marker-array.view.html
     for (var i = 0; i < markers.length; i++) {
@@ -40,6 +45,7 @@ function renderMap() {
         var lon = markers[i][1];
         var popupText = markers[i][2];
 
+        // Add a marker and popup text for each restaurant.
         var markerLocation = new L.LatLng(lat, lon);
         var marker = new L.Marker(markerLocation);
         map.addLayer(marker);
@@ -47,9 +53,12 @@ function renderMap() {
         marker.bindPopup(popupText);
 
     }
-    var group = new L.featureGroup(markarr);
 
+    // Adjust map bounds to contain the furthest restaurant.
+    var group = new L.featureGroup(markarr);
     map.fitBounds(group.getBounds().pad(0.25));
+
+    // Display the map at the <div>
     $("#map").append(map)
 }
 mapInit()

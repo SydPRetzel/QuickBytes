@@ -1,46 +1,47 @@
 
+// Find the lat/lon of the location entered by the user.
+// Move map to that location and trigger the restaurant detection.
+$("#sButton").on("click", function (event) {
 
-$("#sButton").on("click", function(event) {
+    event.preventDefault();
 
-event.preventDefault();
+    var address = $("#address").val();
 
-var address = $("#address").val();
+    var city = $("#city").val();
 
-var city = $("#city").val();
+    var state = $("#state").val();
 
-var state = $("#state").val();
+    var zip = $("#zip").val();
 
-var zip = $("#zip").val();
+    queryURL = "https://www.mapquestapi.com/geocoding/v1/address?key=34ltZ5o9YYYglKuCjJJAiFRMgsCYCWc1&location=" + address + "," + city + "," + state + "," + zip;
 
-queryURL = "https://www.mapquestapi.com/geocoding/v1/address?key=34ltZ5o9YYYglKuCjJJAiFRMgsCYCWc1&location=" + address + "," + city + "," + state + "," + zip;
+    console.log(queryURL);
 
-console.log(queryURL);
+    $("#address").val("");
+    $("#city").val("");
+    $("#state").val("State");
+    $("#zip").val("");
 
-$("#address").val("");
-$("#city").val("");
-$("#state").val("State");
-$("#zip").val("");
+    function getLatLong() {
+        $.ajax({
+            url: queryURL,
+            dataType: 'json',
+            async: true,
+            success: function (response) {
+                //    console.log(response);
+                //    console.log (response.results[0].locations[0].latLng)
+                //    console.log (queryURL)
+                var latLng = (response.results[0].locations[0].latLng)
+                console.log(latLng)
+                latlon = [latLng.lat, latLng.lng]
+                map.remove()
+                mapInit()
 
-function getLatLong() {
-   $.ajax({
-       url: queryURL,
-       dataType: 'json',
-       async: true,
-       success: function (response) {
-        //    console.log(response);
-        //    console.log (response.results[0].locations[0].latLng)
-        //    console.log (queryURL)
-           var latLng = (response.results[0].locations[0].latLng)
-           console.log(latLng)
-           latlon = [latLng.lat,latLng.lng]
-           map.remove()
-           mapInit()
+                makeBackendCalls();
 
-           makeBackendCalls();
-
-       }
-   });
-}
-getLatLong();
+            }
+        });
+    }
+    getLatLong();
 
 })
