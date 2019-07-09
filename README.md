@@ -2,7 +2,7 @@
 You shouldn't make decisions when you're "hangry". Type your location and we'll show you all the quickest, good food spots near you!
 
 ## Live App
-- [Click here to see our website in action.](https://sydpretzel.github.io/QuickBytes/)
+- [Go to site](https://sydpretzel.github.io/QuickBytes/)
 
 ## Technologies Used
 HTML, CSS, Bootstrap, Javascript, JQuery, AJAX, Open Street Maps, Leaflet, Mapquest and Zomato REST APIs.
@@ -13,3 +13,7 @@ QuickBytes is a mobile ready, responsive, client side app.  The view layer is bu
 Upon loading, the app presents the user with a form, a map and a table.  The form allows the user to enter their current address.  The app defaults to the George Washington University Arlington campus address.  The app then takes that information and calls the MapQuest API to determine the latitude and longitude of the user location.  This is then used to query the Zomato API to retrieve the 10 closest restaurants within a 5 mile radius of the user location.  The user location and the restaurant location are plotted on the map.  The MapQuest API is queried to obtain the fastest walking and driving times to each of the restaurants from the user location.  The restaurant names and the commute times are listed in the table.  The restaurant which has the fastest drive time is listed in red.  The restaurant with the fastest walk time is listed in purple.  When a table entry is clicked, a modal will open with driving and walking instructions and also a link to the restaurant menu.
 
 ## Screen shots
+### Landing Page
+![Landing page](https://sydpretzel.github.io/QuickBytes/landing.png)
+
+### Restaurant Details
