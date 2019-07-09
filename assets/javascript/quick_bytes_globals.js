@@ -1,4 +1,6 @@
 
+// File that holds various global values and functions to access them.
+
 var GWU_LAT = 38.8813513; // TODO : How do we get this?
 var GWU_LON = -77.1160333; // TODO : How do we get this?
 var RADIUS_METERS = 8045; // 5 miles.  TODO : How do we define this?
@@ -467,7 +469,7 @@ var restaurantData = {
         var quickest_walk_time = -1;
         for (var i = 0; i < this.getResultsLength(); i++) {
             if (this.getPlaceIsDataValid(i)) {
-                if (quickest_drive_idx==-1) {
+                if (quickest_drive_idx == -1) {
                     quickest_drive_idx = i;
                     quickest_walk_idx = i;
                     quickest_drive_time = this.getPlaceDriveTimeS(i);
