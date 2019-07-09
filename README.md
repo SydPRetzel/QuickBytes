@@ -1,25 +1,15 @@
-![big logo](https://user-images.githubusercontent.com/48193577/55451606-a81bca80-55a1-11e9-8560-6b8be56e895c.png)
 # QuickBytes
 You shouldn't make decisions when you're "hangry". Type your location and we'll show you all the quickest, good food spots near you!
 
-## Team Members
-- [Sharmila](https://github.com/SydPRetzel/) 
-- [Jard Cole-Lewis](https://github.com/jcole090)
-- [Jason Jung](https://github.com/jungeh0907/) 
-- [Mattew Taube](https://github.com/mtaube59/) 
-
-## GitHub Demos
+## Live App
 - [Click here to see our website in action.](https://sydpretzel.github.io/QuickBytes/)
+
 ## Technologies Used
-- [x] Bootstrap, CSS 
+HTML, CSS, Bootstrap, Javascript, JQuery, AJAX, Open Street Maps, Leaflet, Mapquest and Zomato REST APIs.
 
-- [x] JQuery
+## Architecture
+QuickBytes is a mobile ready, responsive, client side app.  The view layer is built with Bootstrap, Open Street Maps, Javascript, HTML and CSS.  Javascript is used to code up class structures and for the control logic.  MapQuest and Zomato APIs are used as data sources.
 
-- [x] Leaflet
+Upon loading, the app presents the user with a form, a map and a table.  The form allows the user to enter their current address.  The app defaults to the George Washington University Arlington campus address.  The app then takes that information and calls the MapQuest API to determine the latitude and longitude of the user location.  This is then used to query the Zomato API to retrieve the 10 closest restaurants within a 5 mile radius of the user location.  The user location and the restaurant location are plotted on the map.  The MapQuest API is queried to obtain the fastest walking and driving times to each of the restaurants from the user location.  The restaurant names and the commute times are listed in the table.  The restaurant which has the fastest drive time is listed in red.  The restaurant with the fastest walk time is listed in purple.  When a table entry is clicked, a modal will open with driving and walking instructions and also a link to the restaurant menu.
 
-- [x] Mapquest
-
-- [x] Zomato APIs
-
-## Sketches
-(https://github.com/SydPRetzel/QuickBytes/blob/master/resources/Main%20Page.pdf)
+## Screen shots
