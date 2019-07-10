@@ -17,3 +17,4 @@ Upon loading, the app presents the user with a form, a map and a table.  The for
 ![Landing page](https://sydpretzel.github.io/QuickBytes/landing.png)
 
 ### Restaurant Details
+![Details page](https://sydpretzel.github.io/QuickBytes/detail.png)
